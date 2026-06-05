@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: black;
+    transition: 0.3s;
+}
+
+header {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    margin: 30px auto;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#job-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.job-card {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    padding: 8px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+#theme-toggle {
+    margin-top: 10px;
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    margin: 100px auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* dark mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #1a1a1a;
+    color: white;
+    box-shadow: none;
+}
+
+.dark-mode .container {
+    background-color: transparent;
+}
+
+.dark-mode .job-card {
+    background-color: #2a2a2a;
+    color: white;
+    box-shadow: 0 0 10px #000;
+}
+
+.dark-mode input {
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+}
+
+.dark-mode .popup-content {
+    background-color: #222;
+    color: white;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+    #job-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #job-list {
+        grid-template-columns: 1fr;
+    }
+}
