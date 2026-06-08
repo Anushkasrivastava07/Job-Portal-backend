@@ -53,7 +53,7 @@ app.get('/jobs', async(req, res) => {
     const skip = (page - 1) * limit;
 
     const jobs = await job.find()
-    .sort({ createdAt: -1 })
+    .sort({ _id: -1 })
     .skip(skip)
     .limit(limit);
 
