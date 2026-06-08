@@ -17,10 +17,11 @@ mongoose.connect(process.env.MONGO_URI)
 .catch(err => console.log(err));
 
 const JobSchema = new mongoose.Schema({
-  title: String,
-  company: String,
-  location: String,
-  type: String
+  title: {type: String, required: true} ,
+  company: {type: String, required: true}, 
+  location: {type: String, required: true} ,
+  type:{type: String, required: true},
+  salary:{type: Number, required: true }
 });
 
 const Job = mongoose.model('job', JobSchema);
