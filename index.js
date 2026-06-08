@@ -52,7 +52,7 @@ app.get('/jobs', async(req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    const jobs = await Job.find()
+    const Jobs = await Job.find()
     .sort({ _id: -1 })
     .skip(skip)
     .limit(limit);
