@@ -29,7 +29,7 @@ const JobSchema = new mongoose.Schema({
   salary:{type: Number, required: true }
 });
 
-const Job = mongoose.model('job', JobSchema);
+const Job = mongoose.model('Job', JobSchema);
 
 app.get("/", (req, res) => {
   res.send("API Working");
@@ -64,7 +64,7 @@ app.get('/jobs', async(req, res) => {
       limit,
       total,
       totalPages: Math.ceil(total / limit),
-      data: jobs
+      data: Jobs
     });
   } catch (err) {
     res.status(500).json({ error: err.message});
