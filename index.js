@@ -46,14 +46,31 @@ app.post('/jobs', async (req, res) => {
 });
 
 // READ
-app.get('/jobs', async (req, res) => {
+app.get('/jobs', async(req, res) => {
   try {
-    const jobs = await Job.find();
-    res.json(jobs);
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+    const jobs = await job.find()
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit);
+
+    const total = await job.countDocuments();
+
+    res.json({
+      page,
+      limit,
+      total,
+      totalPages: Math.ceil(total / limit),
+      data: jobs
+    });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: err.message});
   }
-});
+}
+);
 
 // UPDATE
 app.put('/jobs/:id', async (req, res) => {
