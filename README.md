@@ -11,4 +11,4 @@ npm install
 
 ## API Testing
 ### GET/jobs with pagination
-![GET /jobs Response](https://github.com/Anushkasrivastava07/Job-Portal-backend/raw/fa9820155ce94a606800ea91eb83e9761ececb0d/screenshot/postman.png)
+![GET /jobs Response](https://raw.githubusercontent.com/Anushkasrivastava07/Job-Portal-backend/fa9820155ce94a606800ea91eb83e9761ececb0d/screenshot/postman.png)
